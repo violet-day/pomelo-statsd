@@ -28,10 +28,10 @@ OnlineUser.prototype.start = function (cb) {
     return;
   }
 
-  let connectionService = this.app.components.__connection__;
-  let info = connectionService.getStatisticsInfo();
-
   this.tick = setInterval(() => {
+    let connectionService = this.app.components.__connection__;
+    let info = connectionService.getStatisticsInfo();
+
     this.metrics.gauge('totalConnCount', info.totalConnCount);
     this.metrics.gauge('loginedCount', info.loginedCount);
   }, this.interval);
