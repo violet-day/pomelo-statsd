@@ -1,0 +1,37 @@
+{
+  "name": "pomelo-statsd",
+  "version": "1.0.0",
+  "description": "statsd trace for pomle",
+  "main": "index.js",
+  "scripts": {
+    "compile": "babel src/ -d lib",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/violet-day/pomelo-statsd.git"
+  },
+  "keywords": [
+    "pomelo",
+    "statsd"
+  ],
+  "author": "Nemo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/violet-day/pomelo-statsd/issues"
+  },
+  "homepage": "https://github.com/violet-day/pomelo-statsd#readme",
+  "dependencies": {
+    "lynx": "^0.2.0"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-parameters",
+      "transform-es2015-destructuring"
+    ]
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-destructuring": "^6.6.5",
+    "babel-plugin-transform-es2015-parameters": "^6.7.0"
+  }
+}
