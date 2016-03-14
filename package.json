@@ -1,6 +1,6 @@
 {
   "name": "pomelo-statsd",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "statsd trace for pomle",
   "main": "index.js",
   "scripts": {

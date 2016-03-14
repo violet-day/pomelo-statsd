@@ -6,6 +6,7 @@ statsd trace for pomelo project
 
 * online user
 * do forward timer
+* rpc remote
 
 ### Online User
 
@@ -45,3 +46,22 @@ app.filter(timerFilter({
 metrics:
 
 * `${opt.prefix}.doForward.${route}`
+
+
+### rpcRemote
+
+```js
+
+var rpcFilter = require('pomelo-statsd').rpcFilter;
+
+app.filter(rpcFilter({
+    prefix: 'your prefix',
+    host:'localhost',
+    port:8125,
+}));
+
+```
+
+metrics:
+
+* `${opt.prefix}.rpcRemote.${serverType}.${service}.${method}`
