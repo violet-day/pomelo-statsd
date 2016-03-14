@@ -23,6 +23,10 @@ var OnlineUser = function (app, {prefix,host='localhost',port=8125,interval=3000
 
 OnlineUser.prototype.start = function (cb) {
   console.log(this.app.getServerId(), this.app.isFrontend());
+  if (!this.app.isFrontend()) {
+    console.warn('this component is used for frontend server')
+    return;
+  }
 
   let connectionService = this.app.components.__connection__;
   let info = connectionService.getStatisticsInfo();
@@ -35,7 +39,5 @@ OnlineUser.prototype.start = function (cb) {
 };
 
 OnlineUser.prototype.stop = function () {
-  clearInterval(this.tick);
+  this.tick && clearInterval(this.tick);
 };
-
-
