@@ -4,9 +4,9 @@ statsd trace for pomelo project
 
 ## Features
 
-* online user
-* do forward timer
-* rpc remote
+- [online user](#online-user)
+- [do forward](#do-forward)
+- [rpc remote](#rpc-remote)
 
 ### Online User
 
@@ -29,7 +29,7 @@ metrics:
 * `${opt.prefix}.${app.getServerId}.{loginedCount}`
 
 
-### doForward
+### Do Forward
 
 ```js
 
@@ -48,7 +48,7 @@ metrics:
 * `${opt.prefix}.doForward.${route}`
 
 
-### rpcRemote
+### Rpc Remote
 
 ```js
 
