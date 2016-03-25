@@ -1,0 +1,9 @@
+language: node_js
+deploy:
+  provider: npm
+  email: violet_day@live.com
+  api_key:
+    secure: Q1i+hk2zYnmBQ9wVbR6n1pFlxvGJi4LKLzqbcmwQB5W2QMfNBe07E59ds9X1A9g+7UX83VD8499O+zCuCN1pi1tHZBshABIAcZ1rRcxovPTaRtAO/9fvid2nKzYjlXEm8D1RUtE1M8K/b1JDSngOJAVybzM1r9x1OOvwBU8l1KTFBLc9GJeDCuXZV36q5YU0xnUAEfCW2wsah1rsORx1H6UCXAQ6huSMYqesyErXfQRDUblQtSFavGRjp4RMiQBQGQgZhcDMb7r+hLroorK7J64OeKtLe9FjzndpJiPRGu1HawoytrbF5VICeiNpnyfLzb0JV1ll37Tp2nLdwpT+40zxmlIf0embskeHxdk79sE2NNMjpz3HYE9lVIB7qlNWNf9KvXMTMXejgFZrOB1cn/BtoLE1aLfjajMqw/nJbfPqEtgGJSZwnZPb65c76RKs08upRiP6kkYkWuUM1MfBnfoqHFoQ2tstR15qV8nuhvUfhvzFu/JkB2YlcMI5i1EeYd2CIkWMWUHAu8Nz4o7OQfljsiRb0fd3xn0of5HC89YoVMyLmXeb1Cv8SxB07a9Vq8AGT3YvLDuvJ8aZECk/3C1OHRtYsvw+DQJa9WHuLIQSFnd+3K++Od+WZcdo3kfQyoPSnsDJJeAm4ydyFdxadi+7KIc4NK6rnduofVQ0swY=
+  on:
+    tags: true
+    repo: violet-day/pomelo-statsd
