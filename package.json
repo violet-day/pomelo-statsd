@@ -4,7 +4,7 @@
   "description": "statsd trace for pomle",
   "main": "index.js",
   "scripts": {
-    "compile": "babel src/ -d lib",
+    "compile": "node_modules/.bin/babel src/ -d lib",
     "prepublish": "npm run compile"
   },
   "repository": {
@@ -31,6 +31,7 @@
     ]
   },
   "devDependencies": {
+    "babel-cli": "^6.6.5",
     "babel-plugin-transform-es2015-destructuring": "^6.6.5",
     "babel-plugin-transform-es2015-parameters": "^6.7.0"
   }
