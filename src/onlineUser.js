@@ -3,7 +3,9 @@
  */
 'use strict';
 
-let lynx = require('lynx');
+const lynx = require('lynx');
+const util = require('util');
+const debug = util.debuglog('onlineUsers');
 
 module.exports = function (app, opts) {
   let trace = new OnlineUser(app, opts);
@@ -11,20 +13,20 @@ module.exports = function (app, opts) {
   return trace;
 };
 
-var OnlineUser = function (app, {prefix,host='localhost',port=8125,interval=3000}) {
+var OnlineUser = function (app, {prefix, host='localhost', port=8125, interval=3000}) {
   this.app = app;
   this.name = '__onlineUser__';
   this.scope = `${prefix}.${app.getServerId()}`;
   this.interval = interval;
 
-  console.log('onlineUser:', host, port, this.scope);
+  debug('onlineUser:', host, port, this.scope);
   this.metrics = new lynx(host, port, {scope: this.scope});
 };
 
 OnlineUser.prototype.start = function (cb) {
-  console.log(this.app.getServerId(), this.app.isFrontend());
+  debug(this.app.getServerId(), this.app.isFrontend());
   if (!this.app.isFrontend()) {
-    console.warn('this component is used for frontend server')
+    console.warn('this component is used for frontend server');
     return;
   }
 
@@ -32,6 +34,7 @@ OnlineUser.prototype.start = function (cb) {
     let connectionService = this.app.components.__connection__;
     let info = connectionService.getStatisticsInfo();
 
+    debug(info);
     this.metrics.gauge('totalConnCount', info.totalConnCount);
     this.metrics.gauge('loginedCount', info.loginedCount);
   }, this.interval);
